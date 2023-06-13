@@ -9,7 +9,7 @@
 
     <style>
         body {
-            background: linear-gradient(45deg, #C4DFDF, #4E3636, #EEE2DE, #967E76);
+            background: linear-gradient(45deg, #C2DEDC, #FAF0E4, #EEE2DE, #967E76);
             background-size: 400% 400%;
             animation: wavingColor 10s ease infinite;
         }
@@ -35,6 +35,7 @@
             <a href="index.php">Home</a>
             <a href="index.php#about">About</a>
             <a href="services.php">Service</a>
+            <a href="applicationform.php">Forms</a>
             <a href="contact.php">Contact</a>
         </nav>
         
@@ -45,30 +46,27 @@
     </div><br><br>
     
     <div class="image">
-    <img src="img/Developer.jpg" alt="Picture of the artist">
-    <img src="img/Developer.jpg" alt="Picture of the artist">
-    <img src="img/Developer.jpg" alt="Picture of the artist">
-    </div><br><br>
+    <img src="img/jm.jpg" alt="Picture of the developer">
+    <img src="img/jude.jpg" alt="Picture of the developer">
+    <img src="img/dante.jpg" alt="Picture of the developer">
+    </div><br>
 
     <div class="artist">
-    <p>James Roland L. Angeles
-        <br>3WMAD-1
+    <p>John Mark G. Pagkaliwangan
         <br>BS Information Technology Student
-        <br>21 Years Old
+        <br>Phone: 09129620316
         
     </p>
 
-    <p>James Roland L. Angeles
-        <br>3WMAD-1
+    <p>Jude L. Ulan
         <br>BS Information Technology Student
-        <br>21 Years Old
+        <br>Phone: 09166619973
         
     </p>
     
-    <p>James Roland L. Angeles
-        <br>3WMAD-1
+    <p>Dante C. Nicdao Jr.
         <br>BS Information Technology Student
-        <br>21 Years Old
+        <br>Phone: 09605760242
         
     </p>
     </div>><br><br><br><br><br><br>

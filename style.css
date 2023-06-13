@@ -152,11 +152,15 @@ header {
 
 }
 .artist p{
-    color: #359381;
+    color: black;
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
+}
+.artist p:hover{
+    color: #003329;
+    transition: 0.2s;
 }
 /* For index.php user friendly*/
 @media screen and (max-width: 600px) {
