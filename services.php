@@ -158,6 +158,26 @@
             text-decoration: underline;
         }
 
+        @media (max-width: 768px) {
+            .wrapper {
+                width: 90%;
+                max-width: 450px;
+                height: auto;
+            }
+        
+            .form-wrapper.sign-up {
+                transform: scale(1) translate(0, 0);
+            }
+        
+            .form-wrapper.Log-in {
+                transform: scale(1) translate(0, 0);
+            }
+        
+            .input-group input {
+                width: 100%;
+            }
+        }
+
     </style>
     
 </head>

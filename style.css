@@ -174,35 +174,34 @@ header {
     transition: 0.2s;
 }
 /* For index.php user friendly*/
-@media screen and (max-width: 600px) {
-    /* Styles for screens with maximum width of 600px or less */
+@media (max-width: 600px) {
     .logo {
-        width: 100%; /* Adjust the logo width to fit the screen */
-        height: auto; /* Maintain aspect ratio */
+        width: 200px;
+        height: auto;
     }
-
-    .navigation {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .navigation a {
-        margin: 5px;
+        display: block;
+        margin: 10px 0;
     }
-
     .parallax {
-        text-align: center;
+        height: 200px;
     }
-
-    .sec .images {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    #text {
+        font-size: 24px;
     }
-
-    .sec .images img {
-        margin: 5px;
+    .ab img {
+        width: 200px;
+        height: auto;
+    }
+    .ab h2 {
+        font-size: 20px;
+    }
+    .sec p {
+        font-size: 14px;
+    }
+    .images img {
+        width: 150px;
+        height: auto;
     }
 }
 /*Developers page*/
