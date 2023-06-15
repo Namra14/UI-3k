@@ -15,7 +15,7 @@
             <a href="index.php#about">About</a>
             <a href="services.php">Service</a>
             <a href="applicationform.php">Forms</a>
-            <a href="contact.php">Contact</a>
+            
         </nav>
         
     </header>
@@ -34,7 +34,11 @@
 
 
     <section class="sec" id="about">
+        <div class="ab">
+        <img src="img/ab2.png" alt="" width="270px" height="130px">
         <h2>Online Agricultural Insurance Registry and Management System </h2>
+        <img src="img/ab1.png" alt="" width="270px" height="130px">
+        </div><br>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
             Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
             itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
