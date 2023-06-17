@@ -206,47 +206,58 @@
             </div>
         </div>
 
+    <div class="form-row">   
 
-      <div class="form-group" style="margin-right: 20px;">
+      <div class="form-group" style="margin-right: 18px;">
         <label for="breed">Breed:</label>
         <input type="text" id="breed" name="breed" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="ear-mark">Ear Mark:</label>
         <input type="text" id="ear-mark" name="ear-mark" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="brand">Brand:</label>
         <input type="text" id="brand" name="brand" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="basic-color">Basic Color:</label>
         <input type="text" id="basic-color" name="basic-color" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="male-animals">No. of Male Animals:</label>
         <input type="number" id="male-animals" name="male-animals" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="female-animals">No. of Female Animals:</label>
         <input type="number" id="female-animals" name="female-animals" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="age">Age:</label>
         <input type="text" id="age" name="age" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="housing">No. of Housing:</label>
         <input type="number" id="housing" name="housing" required>
       </div>
+
       <div class="form-group" style="margin-right: 20px;">
         <label for="birth-per-housing">No. of Birth per Housing Unit:</label>
         <input type="number" id="birth-per-housing" name="birth-per-housing" required>
       </div>
+
       <div class="form-group" style="margin-right: 30px;">
         <label for="purchase-date">Date of Purchase:</label>
         <input type="text" id="purchase-date" name="purchase-date" required>
       </div>
+      
       </div>
       <div class="form-group" style="margin-right: 30px;">
         <label for="heads-per-enrollment" style="font-size: 27px;">Total Number of Heads per Enrollment:</label>
@@ -257,8 +268,10 @@
         <input type="text" id="colc" name="colc" required>
         <label for="ctlc">Certificate of Transfer of Large Cattle No:</label>
         <input type="text" id="ctlc" name="ctlc" required>
-
-        <!--IV.-->
+    
+    </div>
+    
+    <!--IV.-->
     <h3 style="font-size: 27px; margin-top: 25px;" >IV. Coverage</h3>
     
     <div class="form-group" style="margin-right: 30px;">
@@ -271,7 +284,7 @@
         <input type="text" id="2" name="2" required>
       </div>
 
-      <div class="form-group" style="margin-right: 30px;">
+      <div class="form-group mb-4" style="margin-right: 30px;">
         <label for="3">3. Extended Coverage for Epidemic Diseases:</label>
         <label for="3.1">3.1</label>
         <input type="text" id="3.1" name="3.1" required>
@@ -283,18 +296,20 @@
 
     <!--E-Signature.-->
       <form>
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Signature of Applicant</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <div class="custom-file col-md-11 mb-4">
+            <input type="file" class="custom-file-input" id="customFileLang">
+            <label class="custom-file-label" for="customFileLang">Signature of Applicant</label>
         </div>
     </form>
-        <br><br><br>
+
+        <br>
         <button class="btn btn-primary" type="submit">Submit form</button>
-      </div>
+    </div>
 
         </div>
     </form>
 </div>
+
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script>
