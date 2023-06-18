@@ -1,3 +1,16 @@
+<?php
+    error_reporting(0);
+	session_start();
+
+    $session_id = $_SESSION['user_id'];
+    if(!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')){        
+        echo '<script>alert("Login or register to enter!")</script>';
+        header('refresh:0.1;url=services.php');
+        exit();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +28,7 @@
             <a href="index.php#about">About</a>
             <a href="services.php">Service</a>
             <a href="forms.php">Forms</a>
+            <a href="processes/logout.php">Logout</a>
             
         </nav>
         

@@ -1,3 +1,33 @@
+<?php
+
+    session_start();
+    include "processes/config.php";
+
+    if(isset($_POST['submit'])){
+        $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+        $account_no = mysqli_real_escape_string($conn, $_POST['account_no']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $pw = mysqli_real_escape_string($conn, md5($_POST['pw']));
+        $cpw = mysqli_real_escape_string($conn, md5($_POST['cpw']));
+
+        $select = mysqli_query($conn, "SELECT * FROM `user_table` WHERE user_id = '$user_id' AND password = '$pw'") or die("query failed");
+
+        if($pw == $cpw){
+            if(mysqli_num_rows($select) > 0){
+                $message[] = '<script>alert("User Already Exists")</script>';
+            }
+            else{
+                $message[] = '<script>Alert("User Registration Complete.")</script>';
+                mysqli_query($conn, "INSERT INTO `user_table` (name, user_id, email, password) VALUES ('$fullname', '$user_id', '$email', '$pw')") or die("query failed");
+                header('location:services.php#login');
+            }
+        }else{
+            echo "<script>alert('Password Not Matched.')</script>";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +79,7 @@
             width: 100%;
             height: 100%;
             transition: 1s ease-in-out;
+            margin-left: 6%;
         }
         .wrapper.active .form-wrapper.sign-up{
             transform: scale(0) translate(-300px, 500px);
@@ -182,71 +213,77 @@
     
 </head>
 <body>
+
+    <?php
+
+        if (isset($message)) {
+            foreach($message as $message){
+            echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+            }
+        }
+
+    ?>
+
     <div class="wrapper">
-        <div class="form-wrapper sign-up">
-            <form action="">
-                <h2>Sign Up</h2>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">School ID</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Fullname</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Year Level</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" required>
-                    <label for="">Confirm Password</label>
-                </div>
-               
-                <div class="remember">
-                    <label><input type="checkbox"> I agree to the terms & conditions</label>
-                </div>
-                <button type="submit">Sign In</button>
-                <div class="signUp-link">
-                    <p>Already have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
-                </div>
-                
 
-            </form>
-        </div>
-
-        <div class="form-wrapper Log-in">
-            <form action="">
+        <div class="form-wrapper Log-in" id="login">
+            <form action="processes/login.php" method="POST">
                 <h2>Log in</h2>
                 <div class="input-group">
-                    <input type="text" required>
-                    <label for="">Username</label>
+                    <input type="text" value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="account_no" required>
+                    <label for="">Account Number</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password" value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"];}?>" name="pw" required>
                     <label for="">Password</label>
                 </div>
                
                 <div class="remember">
                     <label><input type="checkbox"> Remember Me</label>
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" name="login">Sign In</button>
                 <div class="signIn-link">
                     <p>Don't have an account? <a href="#" class="signInBtn-link">Sign Up</a></p>
+                </div>
+            </form>
+        
+        </div>
+
+        <div class="form-wrapper sign-up">
+            <form action="" method="POST">
+                <h2>Sign Up</h2>                
+                <div class="input-group">
+                    <input type="text" id="fullname" name="fullname" required>
+                    <label for="">Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="account_no" name="account_no" required>
+                    <label for="">Account Number</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="pw" name="pw" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="cpw" name="cpw" required>
+                    <label for="">Confirm Password</label>
+                </div>
+               
+                <div class="remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" name="submit">Sign In</button>
+                <div class="signUp-link">
+                    <p>Already have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
                 </div>
                 
 
             </form>
-        
-        </div>
+        </div>       
     </div>
 
     <script src="services.js"></script>
