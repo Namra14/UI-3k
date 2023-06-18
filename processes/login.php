@@ -11,8 +11,8 @@
 		$query = mysqli_query($conn, "SELECT * FROM `user_table` WHERE account_no='$account_no' && password='$pw'");
 
 		if (mysqli_num_rows($query) == 0){
-            echo '<script>alert("Login Failed. User not Found!")</script>';
-			header('location:../services.php#login');
+            echo '<script>alert("Incorrect ID or Password!")</script>';
+        	header('refresh:0.1;url=../services.php');
 		}
 		else{
 			$row = mysqli_fetch_array($query);
