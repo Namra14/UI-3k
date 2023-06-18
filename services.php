@@ -226,7 +226,7 @@
 
     <div class="wrapper">
 
-        <div class="form-wrapper Log-in" id="login">
+        <div class="form-wrapper sign-up" id="login">
             <form action="processes/login.php" method="POST">
                 <h2>Log in</h2>
                 <div class="input-group">
@@ -249,7 +249,7 @@
         
         </div>
 
-        <div class="form-wrapper sign-up">
+        <div class="form-wrapper Log-in">
             <form action="" method="POST">
                 <h2>Sign Up</h2>                
                 <div class="input-group">

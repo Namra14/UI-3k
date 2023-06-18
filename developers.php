@@ -36,6 +36,7 @@
             <a href="index.php#about">About</a>
             <a href="services.php">Service</a>
             <a href="forms.php">Forms</a>
+            <a href="processes/logout.php">Logout</a>
         </nav>
         
     </header><br><br><br><br><br><br><br><br>
