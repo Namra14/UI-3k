@@ -41,7 +41,7 @@
         <img src="img/hill4.png" id="hill4">
         <img src="img/hill5.png" id="hill5">
         <img src="img/tree.png" id="tree">
-        <h2 id="text">Agricultural Website</h2>
+        <h2 id="text">OAIR Website</h2>
         <img src="img/leaf.png" id="leaf">
         <img src="img/plant.png" id="plant">
     </section>
@@ -53,27 +53,29 @@
         <h2>Online Agricultural Insurance Registry and Management System </h2>
         <img src="img/ab1.png" alt="" width="270px" height="130px">
         </div><br>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?<br><br>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?<br><br>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Omnis sit saepe ex minima iste maxime repellendus porro culpa quae modi, 
-            itaque reiciendis facere repellat corporis, error ad quo aperiam sint?<br><br>
+        <p>Welcome to the Online Agricultural Insurance Registry and Management System for the Municipal Agriculture Office of San Antonio, Quezon. 
+            Our system aims to revolutionize the way agricultural insurance is administered and managed, providing a more efficient, transparent, and accessible platform for farmers in the region. 
+            At the core of our system is the belief that farmers deserve timely, complete, and quality information to make informed decisions about their agricultural practices. 
+            We understand that agriculture is the backbone of the Philippine economy, and empowering farmers with the right tools and knowledge is crucial for their success and the overall growth 
+            of the sector. The traditional methods of delivering agricultural information, such as farmer-to-farmer visits and extension officers, have limitations in terms of reach and 
+            effectiveness. Our online platform bridges this gap by providing a centralized hub where farmers can access valuable information related to agriculture, insurance, and risk management. 
+            One of the key challenges faced by farmers is the exposure to various risks, both biotic and abiotic in nature. Pests, diseases, 
+            and weather extremes can cause significant losses in agriculture, impacting the livelihoods of smallholder farming systems.<br><br>
+
+            Our system recognizes these risks and aims to provide effective risk management solutions, including agricultural insurance. 
+            Through our online platform, farmers can easily register for agricultural insurance, submit necessary documents, and have them verified and validated in a streamlined manner. 
+            The system also calculates production input costs, assesses loss payee and total sum insured, and allows farmers to track their insurance claim applications online. 
+            We prioritize transparency and uniformity in estimating losses and reimbursements. By providing standardized techniques and processes, we aim to minimize disagreements 
+            between farmers and the municipal agriculture office, fostering trust and confidence in the insurance program. Real-time monitoring and evaluation are integral components 
+            of our system. We generate reports and analytics that enable the municipal agriculture office to assess the effectiveness of the insurance program, identify areas for improvement, 
+            and make data-driven decisions. This ensures that the program remains responsive to the evolving needs of farmers and the agricultural sector as a whole.<br><br>
+
+            Additionally, we recognize the importance of financial literacy in effective risk management. Our system includes 
+            educational resources and tools to increase farmers' understanding of insurance concepts, 
+            enabling them to make informed choices and engage in productive farming practices. Overall, 
+            our Online Agricultural Insurance Registry and Management System aims to revolutionize the way agricultural 
+            insurance is administered and managed in San Antonio, Quezon. By leveraging technology and providing a user-friendly platform, we strive to empower farmers, 
+            enhance efficiency, and promote sustainable agricultural practices. Together, let's build a resilient and prosperous agricultural sector for the future.<br><br>
         </p>
         <div class="images">
         <img src="img/agr.png" width="300px" height="300px">
