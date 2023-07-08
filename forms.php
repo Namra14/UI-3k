@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #98EECC;
+            background: #F2EAD3;
         }
 
         .container {
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
             width: 100%;
             border-radius: 6px;
             padding: 30px;
-            margin: 10% 15px 50px 15px;
+            margin: 11% 15px 50px 15px;
             background-color: #fff;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
@@ -284,11 +284,11 @@ if (isset($_POST['submit'])) {
 <body>
 
     <header>
-        <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="130px"></a>
+    <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="110px"></a>
         <nav class="navigation">
-            <a href="index.php" class="active">Home</a>
+            <a href="index.php">Home</a>
             <a href="index.php#about">About</a>
-            <a href="forms.php">Forms</a>
+            <a href="forms.php"  class="active">Forms</a>
             <a href="processes/logout.php">Logout</a>
 
         </nav>

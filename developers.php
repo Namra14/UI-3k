@@ -34,7 +34,7 @@
 
 <body>
     <header>
-        <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="130px"></a>
+    <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="110px"></a>
         <nav class="navigation">
             <a href="index.php">Home</a>
             <a href="index.php#about">About</a>
