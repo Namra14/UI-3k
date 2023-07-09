@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
 
 <body>
     <header>
-        <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="130px"></a>
+        <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="110px"></a>
         <nav class="navigation">
             <a href="index.php" class="active">Home</a>
             <a href="index.php#about">About</a>
@@ -80,9 +80,9 @@ if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
             enhance efficiency, and promote sustainable agricultural practices. Together, let's build a resilient and prosperous agricultural sector for the future.<br><br>
         </p>
         <div class="images">
-            <img src="img/agr.png" width="300px" height="300px">
-            <img src="img/agr1.jpg" width="300px" height="300px">
-            <img src="img/agr.png" width="300px" height="300px">
+            <img src="img/agr.png" width="300px" height="250px">
+            <img src="img/agr1.jpg" width="300px" height="250px">
+            <img src="img/agr.png" width="300px" height="250px">
         </div><br><br>
 
         <div class="button">
