@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
 
         .container {
             position: relative;
-            max-width: 850px;
+            max-width: 840px;
             width: 100%;
             border-radius: 6px;
             padding: 30px;
@@ -286,9 +286,9 @@ if (isset($_POST['submit'])) {
     <header>
         <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="130px"></a>
         <nav class="navigation">
-            <a href="index.php" class="active">Home</a>
+            <a href="index.php">Home</a>
             <a href="index.php#about">About</a>
-            <a href="forms.php">Forms</a>
+            <a href="forms.php" class="active">Forms</a>
             <a href="processes/logout.php">Logout</a>
 
         </nav>
