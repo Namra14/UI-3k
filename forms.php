@@ -11,8 +11,12 @@ if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
     exit();
 }
 
+$acc_no_query = mysqli_query($conn, "SELECT * FROM `user_table` WHERE id = $session_id");
+$fetch_no = mysqli_fetch_assoc($acc_no_query);
+
 if (isset($_POST['submit'])) {
 
+    $account_no = $_POST['account_no'];
     $full_name = $_POST['full_name'];
     $contact = $_POST['contact'];
     $date_of_birth = date('Y-m-d', strtotime($_POST['date_of_birth']));
@@ -41,11 +45,11 @@ if (isset($_POST['submit'])) {
     $coverage_for_epidemic_disease2 = $_POST['three_two'];
     $coverage_for_epidemic_disease3 = $_POST['three_three'];
 
-    $insert_query = mysqli_query($conn, "INSERT INTO lmi_form (full_name, contact, date_of_birth, gender, marital_stat, spouse_name, animal_type, purpose, stock_source,
+    $insert_query = mysqli_query($conn, "INSERT INTO lmi_form (account_no, full_name, contact, date_of_birth, gender, marital_stat, spouse_name, animal_type, purpose, stock_source,
     breed, ear_mark, brand, basic_color, no_of_male_animals, no_of_female_animals, age, no_of_housing, no_of_birth_per_house_unit, date_of_purchase, total_no_of_heads_per_enroll,
     cert_owner_large_cattle_no, cert_transfer_large_cattle_no, desired_sum_insured, total_sum_insured, coverage_for_epidemic_disease1, coverage_for_epidemic_disease2, coverage_for_epidemic_disease3)
     VALUES
-    ('$full_name','$contact', '$date_of_birth', '$gender', '$marital_stat', '$spouse_name', '$animal_type', '$purpose', '$stock_source', '$breed', '$ear_mark', '$brand', '$basic_color',
+    ('$account_no', '$full_name','$contact', '$date_of_birth', '$gender', '$marital_stat', '$spouse_name', '$animal_type', '$purpose', '$stock_source', '$breed', '$ear_mark', '$brand', '$basic_color',
     '$no_of_male_animals', '$no_of_female_animals', '$age', '$no_of_housing', '$no_of_birth_per_house_unit', '$date_of_purchase', '$total_no_of_heads_per_enroll',
     '$cert_owner_large_cattle_no', '$cert_transfer_large_cattle_no', '$desired_sum_insured', '$total_sum_insured', '$coverage_for_epidemic_disease1', '$coverage_for_epidemic_disease2', '$coverage_for_epidemic_disease3')");
 
@@ -284,11 +288,11 @@ if (isset($_POST['submit'])) {
 <body>
 
     <header>
-    <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="110px"></a>
+        <a href="index.php"><img class="logo" src="img/newl.png" width="270px" height="110px"></a>
         <nav class="navigation">
             <a href="index.php">Home</a>
             <a href="index.php#about">About</a>
-            <a href="forms.php"  class="active">Forms</a>
+            <a href="forms.php" class="active">Forms</a>
             <a href="processes/logout.php">Logout</a>
 
         </nav>
@@ -302,10 +306,12 @@ if (isset($_POST['submit'])) {
                 <div class="details personal">
                     <span class="title">Personal Details</span>
 
+                    <input type="hidden" name="account_no" value="<?php echo $fetch_no['account_no']; ?>">
+
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" name="full_name" placeholder="Enter your name" required>
+                            <input type="text" name="full_name" placeholder="Enter your name" value="<?php echo $fetch_no['name']; ?>" required>
                         </div>
 
                         <div class="input-field">

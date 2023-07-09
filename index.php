@@ -1,7 +1,7 @@
 <?php
 
 include "processes/config.php";
-error_reporting(0);
+
 session_start();
 
 $session_id = $_SESSION['user_id'];
@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
     header('refresh:0.1;url=services.php');
     exit();
 }
+
 ?>
 
 
