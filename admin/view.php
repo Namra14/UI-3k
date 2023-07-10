@@ -1,9 +1,20 @@
 <?php
 
 error_reporting(0);
+session_start();
 
 include "../processes/config.php";
 include "logic.php";
+
+$session_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
+    echo '<script>alert("Login or register to enter!")</script>';
+    header('refresh:0.1;url=admin_login.php');
+    exit();
+}
+
+$admin_query = mysqli_query($conn, "SELECT * FROM `user_table` WHERE id = '$session_id'");
+$admin_row = mysqli_fetch_assoc($admin_query);
 
 ?>
 
@@ -87,7 +98,7 @@ include "logic.php";
                 <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Projects</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-chart-line me-2"></i>Analytics</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -108,12 +119,12 @@ include "logic.php";
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>John Doe
+                                <i class="fas fa-user me-2"></i><?php echo $admin_row['name']; ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
