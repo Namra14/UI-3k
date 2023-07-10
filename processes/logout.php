@@ -9,5 +9,3 @@
 	}
 
 	header('location:../services.php');
-
-?>

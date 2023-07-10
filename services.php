@@ -269,9 +269,6 @@ if (isset($_POST['submit'])) {
                     <label for="">Password</label>
                 </div>
 
-                <div class="remember">
-                    <label><input type="checkbox"> Remember Me</label>
-                </div>
                 <button type="submit" name="login">Sign In</button>
                 <div class="signIn-link">
                     <p>Don't have an account? <a href="#" class="signInBtn-link">Sign Up</a></p>
@@ -303,11 +300,7 @@ if (isset($_POST['submit'])) {
                     <input type="password" id="cpw" name="cpw" required>
                     <label for="">Confirm Password</label>
                 </div>
-
-                <div class="remember">
-                    <label><input type="checkbox"> I agree to the terms & conditions</label>
-                </div>
-                <button type="submit" name="submit">Sign In</button>
+                <button type="submit" name="submit">Sign Up</button>
                 <div class="signUp-link">
                     <p>Already have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
                 </div>

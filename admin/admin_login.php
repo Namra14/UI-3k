@@ -16,12 +16,10 @@ if (isset($_POST['login'])) {
     } else {
         $row = mysqli_fetch_array($query);
         $_SESSION['user_id'] = $row['id'];
-        echo $_SESSION['user_id'] = $row['id'];
         header('location:index.php');
     }
 } else {
     echo '<script>alert("Login or register to enter!")</script>';
-    header('location:admin_login.php');
 }
 
 ?>
@@ -253,14 +251,16 @@ if (isset($_POST['login'])) {
     <div class="wrapper">
 
         <div class="form-wrapper sign-up" id="login">
-            <form action="#" method="POST">
-                <h2>Log in</h2>
+            <form action="" method="POST">
+                <h2>Admin Login</h2>
+
                 <div class="input-group">
                     <input type="text" value="<?php if (isset($_COOKIE["user"])) {
                                                     echo $_COOKIE["user"];
                                                 } ?>" name="account_no" required>
                     <label for="">Account Number</label>
                 </div>
+
                 <div class="input-group">
                     <input type="password" value="<?php if (isset($_COOKIE["password"])) {
                                                         echo $_COOKIE["password"];
@@ -276,8 +276,6 @@ if (isset($_POST['login'])) {
 
         </div>
     </div>
-
-    <script src="services.js"></script>
 </body>
 
 </html>
