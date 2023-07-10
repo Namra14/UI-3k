@@ -18,11 +18,12 @@ include "logic.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
     <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <style>
         /* Set table width to 100% */
         table {
-            width: 100%;
+            margin: 0% 5% 1% 5%;
+            width: 90%;
         }
 
         /* Add some padding to table cells */
@@ -48,8 +49,12 @@ include "logic.php";
 
         /* Add custom styles for table header backgrounds */
         th {
-            background-color: black;
+            background-color: #10ac84;
             color: #ffffff;
+        }
+
+        tr {
+            background-color: #e2e6ea;
         }
 
         /* Add custom styles for alternating row colors */
@@ -60,6 +65,13 @@ include "logic.php";
         /* Add custom styles for table hover effect */
         tbody tr:hover {
             background-color: #e2e6ea;
+        }
+
+        .namer {
+            width: 13%;
+            font-weight: bold;
+            background-color: #1dd1a1;
+            color: #f8f9fa;
         }
     </style>
 
@@ -72,7 +84,7 @@ include "logic.php";
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i class="fas fa-user-secret me-2"></i>OAIR Admin</div>
             <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Projects</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-chart-line me-2"></i>Analytics</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
@@ -110,33 +122,103 @@ include "logic.php";
 
             <div class="container-fluid px-4">
 
-                <div class="row my-5">
-                    <h3 class="fs-4 mb-3">List of Insurance</h3>
+                <div class="row my-2">
+                    <h3 class="fs-4 mb-3">Insurance Information</h3>
                     <div class="col">
                         <?php foreach ($query as $q) { ?>
                             <table class="table-bordered">
                                 <tr>
-                                    <th colspan="4">Client Information</th>
+                                    <th colspan="6">Client Information</th>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td colspan="4"><?php echo $q['full_name']; ?></td>
+                                    <td class="namer">Name</td>
+                                    <td colspan="6"><?php echo $q['full_name']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Gender</td>
+                                    <td class="namer">Gender</td>
                                     <td><?php echo $q['gender']; ?></td>
-                                    <td>Birthday</td>
-                                    <td><?php echo $q['date_of_birth']; ?></td>
+                                    <td class="namer">Birthday</td>
+                                    <td colspan="6"><?php echo $q['date_of_birth']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Email</td>
-                                    <td>johndoe@sample.com</td>
-                                    <td>Contact #</td>
-                                    <td>091233345689</td>
+                                    <td class="namer">Account Number</td>
+                                    <td><?php echo $q['account_no']; ?></td>
+                                    <td class="namer">Contact #</td>
+                                    <td colspan="6"><?php echo $q['contact']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td colspan="3">sample sample sample</td>
+                                    <td class="namer">Marital Status</td>
+                                    <td><?php echo $q['marital_stat']; ?></td>
+                                    <td class="namer">Spouse Name</td>
+                                    <td colspan="6"><?php echo $q['spouse_name']; ?></td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="6">Livestock Information</th>
+                                </tr>
+                                <tr>
+                                    <td class="namer">Animal Type</td>
+                                    <td><?php echo $q['animal_type']; ?></td>
+                                    <td class="namer">Purpose</td>
+                                    <td><?php echo $q['purpose']; ?></td>
+                                    <td class="namer">Stock Source</td>
+                                    <td><?php echo $q['stock_source']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">Breed</td>
+                                    <td><?php echo $q['breed']; ?></td>
+                                    <td class="namer">Ear Mark</td>
+                                    <td><?php echo $q['ear_mark']; ?></td>
+                                    <td class="namer">Brand</td>
+                                    <td><?php echo $q['brand']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">Color</td>
+                                    <td><?php echo $q['basic_color']; ?></td>
+                                    <td class="namer">No. of Male Animals</td>
+                                    <td><?php echo $q['no_of_male_animals']; ?></td>
+                                    <td class="namer">No. of Female Animals</td>
+                                    <td><?php echo $q['no_of_female_animals']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">No. of House</td>
+                                    <td><?php echo $q['no_of_housing']; ?></td>
+                                    <td class="namer">No. Of Birth Per House Unit</td>
+                                    <td><?php echo $q['no_of_birth_per_house_unit']; ?></td>
+                                    <td class="namer">Date of Purchase</td>
+                                    <td><?php echo $q['date_of_purchase']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">Total No. of Heads per Enroll</td>
+                                    <td><?php echo $q['no_of_housing']; ?></td>
+                                    <td class="namer">Certificate of Ownership of Large Cattle No.</td>
+                                    <td><?php echo $q['no_of_birth_per_house_unit']; ?></td>
+                                    <td class="namer">Certificate of Transfer of Large Cattle No.</td>
+                                    <td><?php echo $q['date_of_purchase']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="6">Coverage</th>
+                                </tr>
+                                <tr>
+                                    <td class="namer">1. Desired Sum Insured</td>
+                                    <td><?php echo number_format($q['desired_sum_insured']); ?></td>
+                                    <td class="namer">2. Total Sum Insured</td>
+                                    <td colspan="6"><?php echo number_format($q['total_sum_insured']); ?></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="namer" style="background-color: #10ac84;">3. Extended Coverage for Epidemic Diseases</td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">&nbsp;&nbsp;3.1 </td>
+                                    <td colspan="6"><?php echo $q['coverage_for_epidemic_disease1']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">&nbsp;&nbsp;3.2</td>
+                                    <td colspan="6"><?php echo $q['coverage_for_epidemic_disease2']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="namer">&nbsp;&nbsp;3.3</td>
+                                    <td colspan="6"><?php echo $q['coverage_for_epidemic_disease3']; ?></td>
                                 </tr>
 
                             </table>

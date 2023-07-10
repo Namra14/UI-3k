@@ -2,11 +2,36 @@
 
 include "../processes/config.php";
 
-$query = mysqli_query($conn, "SELECT * FROM `lmi_form`");
+$session_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_id']) || (trim($_SESSION['user_id']) == '')) {
+    echo '<script>alert("Login or register to enter!")</script>';
+    header('refresh:0.1;url=admin_login.php');
+    exit();
+}
 
+
+$query = mysqli_query($conn, "SELECT * FROM `lmi_form`");
 $row = mysqli_fetch_assoc($query);
 
+$count_insurance = "SELECT COUNT(*) as count FROM `lmi_form`";
+$result = mysqli_query($conn, $count_insurance);
+$row = mysqli_fetch_assoc($result);
+$total_insurance = $row['count'];
 
+$count_lmi = "SELECT COUNT(*) as count FROM `lmi_form` WHERE insurance_type = 'Livestock Mortality Insurance'";
+$result = mysqli_query($conn, $count_lmi);
+$row = mysqli_fetch_assoc($result);
+$total_lmi = $row['count'];
+
+$count_hvci = "SELECT COUNT(*) as count FROM `lmi_form` WHERE insurance_type = 'High Value Crop Insurance'";
+$result = mysqli_query($conn, $count_hvci);
+$row = mysqli_fetch_assoc($result);
+$total_hvci = $row['count'];
+
+$count_ci = "SELECT COUNT(*) as count FROM `lmi_form` WHERE insurance_type = 'Crop Insurance'";
+$result = mysqli_query($conn, $count_ci);
+$row = mysqli_fetch_assoc($result);
+$total_ci = $row['count'];
 
 ?>
 
@@ -70,40 +95,40 @@ $row = mysqli_fetch_assoc($query);
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">720</h3>
-                                <p class="fs-5">Products</p>
+                                <h3 class="fs-2"><?php echo $total_ci; ?></h3>
+                                <p class="fs-5">Crop Insurance</p>
                             </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-sold fa-wheat-awn fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">4920</h3>
-                                <p class="fs-5">Sales</p>
+                                <h3 class="fs-2"><?php echo $total_hvci; ?></h3>
+                                <p class="fs-5">High Value Crop Insurance</p>
                             </div>
-                            <i class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-solid fa-tractor fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">3899</h3>
-                                <p class="fs-5">Delivery</p>
+                                <h3 class="fs-2"><?php echo $total_insurance; ?></h3>
+                                <p class="fs-5">Livestock Mortality Insurance</p>
                             </div>
-                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-solid fa-cow fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">%25</h3>
-                                <p class="fs-5">Increase</p>
+                                <h3 class="fs-2"><?php echo $total_lmi; ?></h3>
+                                <p class="fs-5">Clients</p>
                             </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-solid fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
                 </div>
@@ -149,6 +174,7 @@ $row = mysqli_fetch_assoc($query);
     <!-- /#page-content-wrapper -->
     </div>
 
+    <script src="https://kit.fontawesome.com/2895031f15.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");
